@@ -14,7 +14,7 @@ import {
 // --- Configuration ---
 // Set to TRUE to default to Real Backend
 const USE_REAL_BACKEND = true;
-const API_BASE_URL = "http://localhost:3000";
+const API_BASE_URL = "https://https://calendarappbackend1.vercel.app";
 
 // --- Types ---
 interface Meeting {
