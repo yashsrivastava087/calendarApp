@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import  { useState, useEffect } from "react";
 import {
   Calendar,
   Clock,
@@ -7,7 +7,6 @@ import {
   Video,
   Server,
   CheckCircle2,
-  AlertCircle,
   Loader2,
   ShieldCheck,
 } from "lucide-react";
