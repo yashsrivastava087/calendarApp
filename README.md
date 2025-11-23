@@ -4,11 +4,8 @@ A full-stack React application that integrates with Google Calendar via Model Co
 
 ## 🚀 Live Demo
 
-**Live App:** [Your Vercel URL will appear here after deployment]
+**Live App:** https://mcp-calendar.vercel.app/
 
-## 📁 GitHub Repository
-
-[Your GitHub repo link]
 
 ## 🛠 Tech Stack
 
@@ -56,3 +53,39 @@ A full-stack React application that integrates with Google Calendar via Model Co
 git clone [your-repo-url]
 cd mcp-calendar
 npm install
+```
+
+2. Server setup
+
+```bash
+cd server
+npm install
+Environment configuration
+```
+```bash
+# In server/.env
+COMPOSIO_API_KEY=your_composio_api_key
+ENTITY_ID=your_entity_id
+PORT=3001
+Start development servers
+```
+```bash
+# Terminal 1 - Backend
+cd server
+npm start
+
+# Terminal 2 - Frontend  
+cd ..
+npm run dev
+Access the app
+```
+
+Frontend: http://localhost:5173
+Backend API: http://localhost:3001
+Production Deployment
+Build and deploy to Vercel
+
+```bash
+npm run build
+vercel --prod
+```
