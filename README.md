@@ -1,73 +1,58 @@
-# React + TypeScript + Vite
+# MCP Calendar - Google Calendar Integration
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack React application that integrates with Google Calendar via Model Context Protocol (MCP) using Composio, providing a modern calendar interface for managing events.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Live App:** [Your Vercel URL will appear here after deployment]
 
-## React Compiler
+## 📁 GitHub Repository
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+[Your GitHub repo link]
 
-## Expanding the ESLint configuration
+## 🛠 Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Frontend
+- **React 18** - UI framework
+- **FullCalendar** - Calendar component library
+- **Tailwind CSS** - Styling and responsive design
+- **Vite** - Build tool and dev server
+- **Axios** - HTTP client for API calls
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Backend
+- **Node.js** - Runtime environment
+- **Express.js** - Web server framework
+- **Composio MCP** - Model Context Protocol for Google Calendar integration
+- **CORS** - Cross-origin resource sharing
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Deployment
+- **Vercel** - Frontend and serverless functions hosting
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 📋 Assumptions & Decisions
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Technical Assumptions
+1. **Single Calendar**: App assumes use of primary Google Calendar only
+2. **Time Zones**: Uses browser's local timezone for all date/time operations
+3. **Event Types**: Focuses on timed events (not all-day events as primary use case)
+4. **User Authentication**: Relies on pre-configured Composio entity for Google OAuth
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Product Decisions
+1. **Progressive Enhancement**: Clicking dates with existing events shows summary before creation
+2. **Mobile-First**: Responsive design optimized for mobile and desktop
+3. **Optimistic Updates**: UI updates immediately, then syncs with Google Calendar
+4. **Time Picker**: Custom 15-minute interval time selector for better UX
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🚀 Quick Start
+
+### Prerequisites
+- Node.js 16+ 
+- Google account with Calendar access
+- Composio account with Google Calendar app connected
+
+### Local Development
+
+1. **Clone and setup**
+```bash
+git clone [your-repo-url]
+cd mcp-calendar
+npm install
